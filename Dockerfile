@@ -1,8 +1,8 @@
 FROM ubuntu:16.04
 MAINTAINER yaiceltg@gmail.com
 
-# define open-vidu-server 
-ENV VERSION=2.6.0
+# define openvidu version
+ENV OPENVIDU_VERSION=2.6.0
 
 # Install Java, supervisor and netstat
 RUN apt-get update && apt-get install -y \
@@ -15,7 +15,7 @@ RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Copy OpenVidu Server
-RUN wget https://github.com/OpenVidu/openvidu/releases/download/v{VERSION}/openvidu-server-{VERSION}.jar -o /openvidu-server.jar
+RUN wget https://github.com/OpenVidu/openvidu/releases/download/v{OPENVIDU_VERSION}/openvidu-server-{OPENVIDU_VERSION}.jar -o /openvidu-server.jar
 
 EXPOSE 4443
 
