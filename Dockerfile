@@ -8,6 +8,7 @@ ENV OPENVIDU_VERSION=2.6.0
 RUN apt-get update && apt-get install -y \
   openjdk-8-jre \
   supervisor \
+  wget \
 && rm -rf /var/lib/apt/lists/*
 
 # Configure supervisor
