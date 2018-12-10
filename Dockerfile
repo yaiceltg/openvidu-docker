@@ -16,7 +16,7 @@ RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Copy OpenVidu Server
-RUN wget https://github.com/OpenVidu/openvidu/releases/download/v{OPENVIDU_VERSION}/openvidu-server-{OPENVIDU_VERSION}.jar -O /openvidu-server.jar
+RUN wget https://github.com/OpenVidu/openvidu/releases/download/v${OPENVIDU_VERSION}/openvidu-server-${OPENVIDU_VERSION}.jar -O /openvidu-server.jar
 
 EXPOSE 4443
 
